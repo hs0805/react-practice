@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const Student = props => {
     return (<>
-            <h1>Hello {props.name}</h1>
+            <h1>Hello {props.name} and children of  this are {props.children } </h1>
             <h1>Roll No: {props.roll}</h1>
         </>);
 }
