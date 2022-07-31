@@ -1,10 +1,13 @@
-import react, { Component } from "react";
+import React, { Component, Fragment} from "react";
 
-let e1 = React.createElement("h1", null, "Hello Happy"); // Normal code
+class App extends Component {
+    render() {
+        // return React.createElement("h1", null, "Hello Happy"); // Normal code  (type, props, children)
+        return <React.Fragment>
+            <h1>Hello Happy</h1>
+            <h1>Hello Ghost</h1>
+            </React.Fragment>
+    }
+}
 
-let e2 =  <h1> Hello Ghost </h1>;   // JSX
-
-// ReactDOM.render(e1, document.getElementById("root"));   // rednder element e2 in root 
-// ReactDOM.render(e2, document.getElementById("root"));   // rednder element e2 in root 
-
-export default e1;
+export default App;
