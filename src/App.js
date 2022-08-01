@@ -6,19 +6,21 @@ class App extends Component {
 
     render() {
 
-        const arr = [10, 20, 30, 40, 50, 60];
+        const arr = [
+            { id: "101", name: "Happy Singh", district: "SGNR"},
+            { id: "102", name: "Saksham Singh", district: "KKR"},
+            { id: "103", name: "Aaditya Sinha", district: "PATNA"},
+    ];
         const newArr = arr.map((num) => {
             return <li> {num*2} </li>
         })
 
         return (
             <div>
-                <ul>{newArr}</ul>
-                <br></br>
                 <ul>
                     {
-                        arr.map((num) => {
-                           return <li>{num}</li>
+                        arr.map((user) => {
+                           return <li key={user.id}>name : {user.name}  State: {user.district}</li>
                         })
                     }
                 </ul>
