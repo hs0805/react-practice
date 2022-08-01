@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 import Student from "./Student";
+import Teacher from './Teacher'
+import Counter from "./Counter";
 
-ReactDOM.render(<Student roll="101" />, document.getElementById("root"))
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<Counter />)
