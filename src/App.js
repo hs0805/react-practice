@@ -1,12 +1,28 @@
 import React, { Component } from "react";
-import { Teacher, Student } from "./Student";
+import User from './User'
+import Guest from "./Guest";
+
 class App extends Component {
-    render() {
-        // return React.createElement("h1", null, "Hello Happy"); // Normal code  (type, props, children)
-        return <React.Fragment>
-            <Student>These are children</Student>
-            <Student>Happy, kaushik, Vishwa</Student>
+    state = {
+        isLoggedIn: true
+    }
+
+    clickLogin = () => {
+        this.setState({isLoggedIn: true})
+    }
+
+    clickLogout = () => {
+        this.setState({isLoggedIn: false})
+    }
+
+    render(){
+        return(
+            <React.Fragment>
+                {(this.state.isLoggedIn && <User /> ) || (<Guest/>) }
+                <button onClick={this.clickLogin}> Login </button>
+                <button onClick={this.clickLogout}> Logout </button>
             </React.Fragment>
+        )
     }
 }
 
