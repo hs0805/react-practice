@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import User from './User'
 import Guest from "./Guest";
+import pic1 from "./pic1.jpg";    //Import like this if it is in src folder or use 
 
 class App extends Component {
 
@@ -20,7 +21,11 @@ class App extends Component {
                 <ul>
                     {
                         arr.map((user) => {
-                           return <li key={user.id}>name : {user.name}  State: {user.district}</li>
+                           return <li key={user.id}>
+                            <img src={pic1} height="20" width="20"/>
+                            name : {user.name}  State: {user.district}
+                            <img src={process.env.PUBLIC_URL+"/images/pic.jpg"} height="20" width="20"/>
+                           </li>
                         })
                     }
                 </ul>
